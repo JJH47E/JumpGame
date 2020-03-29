@@ -28,6 +28,7 @@ public class playerMove : MonoBehaviour
         if(col.gameObject.tag == "Floor")
         {
             collided = true;
+            Debug.Log("Floor Collision");
         }
         if(col.gameObject.tag == "Enemy")
         {

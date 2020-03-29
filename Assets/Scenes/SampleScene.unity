@@ -482,6 +482,9 @@ MonoBehaviour:
   prefabs:
   - {fileID: 5073601186867979487, guid: a8177520447c6694281acee3b551338a, type: 3}
   - {fileID: 1510702228459258032, guid: a47e10e6156f0924a9e85c3bc4233ada, type: 3}
+  - {fileID: 6516991848378020754, guid: 26f0df0254bc4eb49a894c2e773dfd2d, type: 3}
+  - {fileID: 749727265112284097, guid: f4c3645f57713024e8d49ddd28606b08, type: 3}
+  - {fileID: 7468506137102420924, guid: 70352db35aaca2d458c7e68be863e053, type: 3}
   canSpawn: 1
   score: 0
 --- !u!23 &1664589713
@@ -628,7 +631,7 @@ PrefabInstance:
     - target: {fileID: 2258607835333987159, guid: 14606d87dfd6f82448fbb252d893737a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 113.6186
+      value: 136.34233
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14606d87dfd6f82448fbb252d893737a, type: 3}

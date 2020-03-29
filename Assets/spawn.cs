@@ -15,7 +15,7 @@ public class spawn : MonoBehaviour
     void Start() //Todo; check every frame if canSpawn bool is true (sets true every fixed amount of time). If true, spawn and set canSpawn to false.
     {
         Debug.Log("Test begun!");
-        StartCoroutine(SpawnDelay(3f));
+        StartCoroutine(SpawnDelay(2f));
         counter = GameObject.Find("Score").GetComponent<Text>();
         counter.text = "0";
         counter.color = Color.white;
