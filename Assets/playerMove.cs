@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMove : MonoBehaviour
 {
@@ -6,11 +7,13 @@ public class playerMove : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 jump_vel;
     public bool collided;
+    public bool endgame;
+    public int s;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("up"))
+        if (Input.GetKey("space") == true)
         {
             jump = true;
         }
@@ -26,6 +29,10 @@ public class playerMove : MonoBehaviour
         {
             collided = true;
         }
+        if(col.gameObject.tag == "Enemy")
+        {
+            endgame = true;
+        }
     }
 
     void OnCollisionExit2D(Collision2D col)
@@ -34,8 +41,18 @@ public class playerMove : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        SceneManager.UnloadSceneAsync("StartScreen");
+    }
+
     void FixedUpdate()
     {
+        if(endgame == true)
+        {
+            Debug.Log("Collision detected; ending game");
+            SceneManager.LoadScene("gameOver");
+        }
         if(jump == true & collided == true)
         {
             rb.AddForce(jump_vel);
