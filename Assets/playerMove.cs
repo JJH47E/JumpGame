@@ -9,6 +9,8 @@ public class playerMove : MonoBehaviour
     public bool collided;
     public bool endgame;
     public int s;
+    public AudioSource jumpSource;
+    public AudioSource hurtSource;
 
     // Update is called once per frame
     void Update()
@@ -45,6 +47,8 @@ public class playerMove : MonoBehaviour
     void Start()
     {
         SceneManager.UnloadSceneAsync("StartScreen");
+        jumpSource = GetComponent<AudioSource>();
+        hurtSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -52,11 +56,13 @@ public class playerMove : MonoBehaviour
         if(endgame == true)
         {
             Debug.Log("Collision detected; ending game");
+            hurtSource.Play();
             SceneManager.LoadScene("gameOver");
         }
         if(jump == true & collided == true)
         {
             rb.AddForce(jump_vel);
+            jumpSource.Play();
         }
     }
 }

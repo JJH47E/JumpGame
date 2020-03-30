@@ -8,6 +8,7 @@ public class menuStart : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync("SampleScene");
         SceneManager.UnloadSceneAsync("gameOver");
+        PlayerPrefs.SetInt("Hi", 0);
     }
 
     // Update is called once per frame
